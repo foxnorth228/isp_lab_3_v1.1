@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>New post</h1>
+    <form id="post_editing" method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+    </form>
+    <p>Add tag</p>
+    <div class="modifyTags">
+        <input type="text" id="input_add_tags">
+        <button id="butt_add_tags">Add</button>
+    </div>
+    <p>Filter tag</p>
+    <div class="modifyTags">
+        <input type="text" id="input_filter_tags">
+        <button id="butt_filter_tags">Filter</button>
+    </div>
+    <button type="submit" form="post_editing" class="save btn btn-default">Save</button>
+    <script type="text/javascript" src="/static/js/adding_tags.js"></script>
+{% endblock %}

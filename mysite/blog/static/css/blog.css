@@ -19,6 +19,31 @@
     font-size: 5em;
 }
 
+.signBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.userBlock {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.signLink {
+    color:black;
+    font-size: 3em;
+    transition: 1.2s;
+}
+
+.signLink:hover {
+    color: rgb(168, 168, 168);
+}
+
 .flexIcons {
     width: 21%;
     height: 100%;

@@ -1,0 +1,12 @@
+.headerAuth {
+    width: 100%;
+    height: 18%;
+    background-color: rgb(176, 224, 103);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainAuth {
+    height: 72%;
+}
