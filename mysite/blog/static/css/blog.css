@@ -91,6 +91,11 @@
     background: rgb(168, 168, 168);
 }
 
+.homeLink {
+    mask-image: url("/static/icons/home.svg");
+    -webkit-mask-image: url("/static/icons/home.svg");
+}
+
 .addLink {
     mask-image: url("/static/icons/plus.svg");
     -webkit-mask-image: url("/static/icons/plus.svg");
