@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from datetime import date
 
 
 class Account(models.Model):
@@ -24,11 +25,14 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     tags = models.ManyToManyField('Tag', related_name="tags")
-    created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    created_date = models.DateField(default=date.today)
+    created_time = models.DateTimeField(default=timezone.now)
+    published_date = models.DateField(blank=True, null=True)
+    published_time = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
-        self.published_date = timezone.now()
+        self.published_date = date.today()
+        self.published_time = timezone.now()
         self.save()
 
     def __str__(self):
@@ -38,7 +42,7 @@ class Comment(models.Model):
     post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='comments')
     author = models.CharField(max_length=200)
     text = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now)
+    created_time = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
 
     def approve(self):
